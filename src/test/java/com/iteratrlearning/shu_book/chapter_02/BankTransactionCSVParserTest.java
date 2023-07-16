@@ -6,9 +6,9 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class BankTransactionCSVParserTest {
+public class  BankTransactionCSVParserTest {
 
-    private BankStatementParser statementParser = new BankStatementCSVParser();
+    private final BankStatementParser statementParser = new BankStatementCSVParser();
 
     @Test
     public void shouldParseOneCorrectLine() throws Exception {
