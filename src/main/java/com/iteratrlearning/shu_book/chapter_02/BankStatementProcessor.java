@@ -41,7 +41,7 @@ public class BankStatementProcessor {
         return total;
     }
 
-    public Optional<BankTransaction> getMostExpensiveTransaction(
+    public Optional<BankTransaction> getMostExpensiveBankTransaction(
             final LocalDate startPeriod,
             final LocalDate endPeriod) {
         return bankTransactions
@@ -50,7 +50,7 @@ public class BankStatementProcessor {
                 .max(Comparator.comparingDouble(BankTransaction::getAmount));
     }
 
-    public Optional<BankTransaction> getLeastExpensiveTransaction(
+    public Optional<BankTransaction> getLeastExpensiveBankTransaction(
             final LocalDate startPeriod,
             final LocalDate endPeriod) {
         return bankTransactions
