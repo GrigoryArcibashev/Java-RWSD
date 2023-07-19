@@ -21,7 +21,7 @@ public class BankStatementProcessorTest {
     private final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(List.of(bankTransactions));
 
     @Test
-    public void getLeastExpensiveBankTransaction_SimpleTest() {
+    public void getLeastExpensiveBankTransaction_simpleTest() {
         LocalDate startPeriod = LocalDate.of(2018, Month.JANUARY, 1);
         LocalDate endPeriod = LocalDate.of(2023, Month.JANUARY, 1);
         BankTransaction expectedLeastExpensiveBankTransaction =
@@ -34,10 +34,8 @@ public class BankStatementProcessorTest {
         Assert.assertEquals(expectedLeastExpensiveBankTransaction, actualLeastExpensiveBankTransaction.get());
     }
 
-//    public void getLeastExpensiveBankTransaction
-
     @Test
-    public void getMostExpensiveBankTransaction_SimpleTest() {
+    public void getMostExpensiveBankTransaction_simpleTest() {
         LocalDate startPeriod = LocalDate.of(2018, Month.JANUARY, 1);
         LocalDate endPeriod = LocalDate.of(2023, Month.JANUARY, 1);
         BankTransaction expectedMostExpensiveBankTransaction =
@@ -47,5 +45,25 @@ public class BankStatementProcessorTest {
                 bankStatementProcessor.getMostExpensiveBankTransaction(startPeriod, endPeriod);
         Assert.assertTrue(actualMostExpensiveBankTransaction.isPresent());
         Assert.assertEquals(expectedMostExpensiveBankTransaction, actualMostExpensiveBankTransaction.get());
+    }
+
+    @Test
+    public void getLeastExpensiveBankTransaction_shouldNotGetAnything() {
+        LocalDate startPeriod = LocalDate.of(2010, Month.JANUARY, 1);
+        LocalDate endPeriod = LocalDate.of(2014, Month.JANUARY, 1);
+
+        Optional<BankTransaction> actualLeastExpensiveBankTransaction =
+                bankStatementProcessor.getLeastExpensiveBankTransaction(startPeriod, endPeriod);
+        Assert.assertFalse(actualLeastExpensiveBankTransaction.isPresent());
+    }
+
+    @Test
+    public void getMostExpensiveBankTransaction_shouldNotGetAnything() {
+        LocalDate startPeriod = LocalDate.of(2010, Month.JANUARY, 1);
+        LocalDate endPeriod = LocalDate.of(2014, Month.JANUARY, 1);
+
+        Optional<BankTransaction> actualMostExpensiveBankTransaction =
+                bankStatementProcessor.getMostExpensiveBankTransaction(startPeriod, endPeriod);
+        Assert.assertFalse(actualMostExpensiveBankTransaction.isPresent());
     }
 }
