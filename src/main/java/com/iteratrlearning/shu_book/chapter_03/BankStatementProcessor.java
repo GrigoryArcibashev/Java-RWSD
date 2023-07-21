@@ -20,9 +20,9 @@ public class BankStatementProcessor {
                 .summaryStatistics();
 
         return new SummaryStatistics(doubleSummaryStatistics.getSum(),
-                                     doubleSummaryStatistics.getMax(),
-                                     doubleSummaryStatistics.getMin(),
-                                     doubleSummaryStatistics.getAverage());
+                doubleSummaryStatistics.getMax(),
+                doubleSummaryStatistics.getMin(),
+                doubleSummaryStatistics.getAverage());
     }
 
     public double summarizeTransactions(final BankTransactionSummarizer bankTransactionSummarizer) {
