@@ -1,4 +1,6 @@
-package bank_analyzer;
+package bank_analyzer.parsers;
+
+import bank_analyzer.BankTransaction;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

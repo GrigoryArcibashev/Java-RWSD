@@ -4,6 +4,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class BankStatementProcessor {
     private final List<BankTransaction> bankTransactions;
@@ -41,7 +42,7 @@ public class BankStatementProcessor {
         return findTransactions(bankTransaction -> bankTransaction.getAmount() >= amount);
     }
 
-    public List<BankTransaction> findTransactions(final BankTransactionFilter bankTransactionFilter) {
+    public List<BankTransaction> findTransactions(final Predicate<BankTransaction> bankTransactionFilter) {
         final List<BankTransaction> result = new ArrayList<>();
         for (final BankTransaction bankTransaction : bankTransactions) {
             if (bankTransactionFilter.test(bankTransaction)) {

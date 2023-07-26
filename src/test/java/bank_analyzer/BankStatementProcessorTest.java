@@ -20,7 +20,6 @@ public class BankStatementProcessorTest {
             new BankTransaction(LocalDate.of(2022, Month.JANUARY, 30), 50, "Test"),
             new BankTransaction(LocalDate.of(2023, Month.JANUARY, 30), -50, "Test"),
     };
-    private final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(List.of(bankTransactions));
 
     @Test
     public void shouldFilterTransactionsInFebruary() {
@@ -36,18 +35,10 @@ public class BankStatementProcessorTest {
                 marchRoyalties);
 
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
-        final List<BankTransaction> transactions
-                = bankStatementProcessor.findTransactions(new BankTransactionIsInFebruaryAndExpensive());
+        final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(
+                transaction -> transaction.getDate().getMonth() == Month.FEBRUARY && transaction.getAmount() >= 1_000);
 
         assertThat(transactions, contains(februarySalary));
         assertThat(transactions, hasSize(1));
-    }
-
-
-    static class BankTransactionIsInFebruaryAndExpensive implements BankTransactionFilter {
-        @Override
-        public boolean test(final BankTransaction bankTransaction) {
-            return bankTransaction.getDate().getMonth() == Month.FEBRUARY && bankTransaction.getAmount() >= 1_000;
-        }
     }
 }

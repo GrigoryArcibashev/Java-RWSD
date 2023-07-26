@@ -1,5 +1,7 @@
 package bank_analyzer;
 
+import bank_analyzer.parsers.BankStatementCSVParser;
+import bank_analyzer.parsers.BankStatementParser;
 import org.junit.Assert;
 import org.junit.Test;
 

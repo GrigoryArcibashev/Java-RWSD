@@ -1,5 +1,10 @@
 package bank_analyzer;
 
+import bank_analyzer.exporters.Exporter;
+import bank_analyzer.exporters.HtmlExporter;
+import bank_analyzer.parsers.BankStatementCSVParser;
+import bank_analyzer.parsers.BankStatementParser;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;

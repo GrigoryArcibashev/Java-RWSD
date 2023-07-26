@@ -1,5 +1,8 @@
 package bank_analyzer;
 
+import bank_analyzer.exporters.Exporter;
+import bank_analyzer.parsers.BankStatementParser;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
