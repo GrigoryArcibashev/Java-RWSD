@@ -8,7 +8,6 @@ public class BankTransaction {
     private final double amount;
     private final String description;
 
-
     public BankTransaction(final LocalDate date, final double amount, final String description) {
         this.date = date;
         this.amount = amount;
@@ -41,15 +40,13 @@ public class BankTransaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BankTransaction that = (BankTransaction) o;
-        return Double.compare(that.amount, amount) == 0 &&
-                date.equals(that.date) &&
-                description.equals(that.description);
+        return Double.compare(that.amount, amount) == 0
+                && date.equals(that.date)
+                && description.equals(that.description);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(date, amount, description);
     }
-
-
 }

@@ -3,7 +3,7 @@ package bank_analyzer;
 public class HtmlExporter implements Exporter {
     @Override
     public String export(final SummaryStatistics summaryStatistics) {
-        String result = "<!doctype html>";
+        String result = "<!DOCTYPE html>";
         result += "<html lang='en'>";
         result += "<head><title>Bank Transaction Report</title></head>";
         result += "<body>";

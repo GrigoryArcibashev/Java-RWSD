@@ -6,7 +6,6 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 public class BankStatementProcessor {
-
     private final List<BankTransaction> bankTransactions;
 
     public BankStatementProcessor(final List<BankTransaction> bankTransactions) {
@@ -14,12 +13,12 @@ public class BankStatementProcessor {
     }
 
     public SummaryStatistics summarizeTransactions() {
-
-        final DoubleSummaryStatistics doubleSummaryStatistics = bankTransactions.stream()
+        final DoubleSummaryStatistics doubleSummaryStatistics = bankTransactions
+                .stream()
                 .mapToDouble(BankTransaction::getAmount)
                 .summaryStatistics();
-
-        return new SummaryStatistics(doubleSummaryStatistics.getSum(),
+        return new SummaryStatistics(
+                doubleSummaryStatistics.getSum(),
                 doubleSummaryStatistics.getMax(),
                 doubleSummaryStatistics.getMin(),
                 doubleSummaryStatistics.getAverage());
