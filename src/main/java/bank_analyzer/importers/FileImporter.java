@@ -1,7 +1,6 @@
 package bank_analyzer.importers;
 
 import bank_analyzer.BankTransaction;
-import bank_analyzer.importers.Importer;
 import bank_analyzer.importers.exceptions.FileImporterException;
 import bank_analyzer.parsers.BankStatementParser;
 
