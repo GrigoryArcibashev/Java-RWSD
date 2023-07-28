@@ -1,0 +1,11 @@
+package bank_analyzer.importers.exceptions;
+
+public class ImporterException extends Exception {
+    public ImporterException() {
+        super();
+    }
+
+    public ImporterException(String message) {
+        super(message);
+    }
+}
