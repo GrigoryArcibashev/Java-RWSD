@@ -13,8 +13,8 @@ public class FileImporter implements Importer {
     private final Path path;
     private final BankStatementParser parser;
 
-    public FileImporter(Path pathToDataFile, BankStatementParser bankStatementParser) {
-        path = pathToDataFile;
+    public FileImporter(Path pathToFile, BankStatementParser bankStatementParser) {
+        path = pathToFile;
         parser = bankStatementParser;
     }
 
