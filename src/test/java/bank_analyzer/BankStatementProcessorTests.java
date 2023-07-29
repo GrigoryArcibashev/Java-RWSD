@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThat;
 
 public class BankStatementProcessorTests {
     @Test
-    public void shouldSummarizeTransactions() {
+    public void shouldSummarizeTransactionsCorrectly() {
         final BankTransaction[] bankTransactions = {
                 new BankTransaction(LocalDate.of(2017, Month.MARCH, 1), 1000, "Test"),
                 new BankTransaction(LocalDate.of(2017, Month.APRIL, 10), 2000, "Test"),

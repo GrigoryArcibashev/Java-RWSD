@@ -1,6 +1,5 @@
 package bank_analyzer.readers;
 
-import bank_analyzer.readers.FileReader;
 import bank_analyzer.readers.exceptions.FileReaderException;
 import org.junit.Assert;
 import org.junit.Test;
