@@ -1,4 +1,4 @@
-package bank_analyzer;
+package bank_analyzer.readers;
 
 import bank_analyzer.readers.FileReader;
 import bank_analyzer.readers.exceptions.FileReaderException;
