@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
-public class BankTransactionCSVParserTest {
+public class BankTransactionCSVParserTests {
 
     private final BankStatementParser statementParser = new BankStatementCSVParser();
 
